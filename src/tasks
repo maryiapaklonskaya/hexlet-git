@@ -1,0 +1,212 @@
+Exercise 1
+Write a program that, based on the variables: height - height (int) and
+weight - weight (float), checks whether a person can ride a roller
+coaster.
+If a person is taller than 150cm and does not exceed 180kg, the
+program will write in the console "Fasten your seatbelt!", Otherwise it
+will write in the console "I'm sorry you can't go!".
+Get the data from the user in the console using the Scanner class.
+Exercise 2
+Write a program that based on the variable temperature in degrees
+Celsius - tempInCelsius (float), will calculate the temperature in degrees
+Farhenheit (degrees Fahrenheit = 1.8 * degrees Celsius + 32.0) and write
+it in the console.
+Get the temperature from the user in the console using
+the Scanner class.
+Exercise 3
+Write a program that, based on the variable: income (double), will
+calculate the amount of personal income tax due and write it to the
+console.
+The tax is calculated according to the following rules:
+• up to 85,528.00 tax is 18% of the base minus 556.02,
+• from 85,528.00 tax is 14,839.02 + 32% of the surplus over
+85,528.00.
+Get the income from the user in the console using the Scanner class.
+Exercise 4
+Write a program which, based on the variables: amount - amount
+(double) and number of installments - numberOfInstallments (int), will
+calculate the monthly loan installment and write it to the console. The
+parameters have restrictions:
+• the loan amount must be between 100.00 and 10,000.00,
+• the number of installments must be between 6 and 48.
+If the loan amount exceeds the acceptable range, the loan amount
+should be set at 5,000.00. If the number of installments exceeds the
+acceptable range, the number of installments should be set to 36.
+The calculated monthly installment should also include interest. To
+simplify the calculations, assume that you add X percent to the loan
+amount depending on the number of installments:
+• 6-12 installments - 2.5%,
+• 13-24 installments - 5.0%,
+• 25-48 installments - 10.0%,
+and then calculate the installment amount based on the number of
+installments.
+Get the data from the user in the console using the Scanner class.
+Exercise 5
+Write a program that takes a positive integer from the user - number
+(int), and then prints all positive odd numbers not greater than the given
+number in the console in order, each number in new line.
+For example, for the number 15, the program should write in the
+console the numbers: 1, 3, 5, 7, 9, 11, 13, 15 (in new line each)
+Get the data from the user in the console using the Scanner class.
+Exercise 6
+Write a program that takes from the user two integers A - a (int) and B
+- b (int), where A <B, and then calculates the sum of the sequence of
+numbers from A to B (A, A + 1, A + 2, ..., B) and prints it in the console.
+When the A <B condition is not met, the program exits by writing "Job
+completed" in the console.
+For example, for A = 4 and B = 11, the program should write the
+number 60 in the console.
+Get the data from the user in the console using the Scanner class.
+Exercise 7
+Write a program that takes a positive integer N - n (int) from the user,
+and then displays all powers of the number 2 in the console that are not
+greater than the number given (each number should be displayed in
+new line.
+For example, for the number 71 the program should write in the console
+the numbers: 1 2 4 8 16 32 64, in new line each.
+Get the data from the user in the console using the Scanner class.
+Exercise 8
+Write a program that takes numbers from the user as long as the
+number 0 is not given. When the number 0 is given, the program
+calculates the sum of the numbers given and prints it in the console.
+For example, for a series of given numbers: 3, 2, 5, 1, 0, the program
+should write the number 11 in the console.   Get the data from the user
+in the console using the Scanner class.
+Exercise 9
+Write a program that retrieves an integer string from the user.
+Downloading data ends with the number 0 (not included in the data).
+Then, the program calculates the sum of the largest and smallest of the
+given numbers and their arithmetic average and prints them in the
+console.
+For example, for a series of given numbers: 1, -4, 2, 17, 0, the program
+should write in the console the numbers: 13, 6.5.   Get the data from
+the user in the console using the Scanner class.
+Exercise 10
+Write a program that takes an integer from the user and prints all its
+divisors in the console, each divisor in seperate line.
+For example, for the number 21, the program should write in the
+console the numbers: 1, 3, 7, 21 (in new line each)   Get the data from
+the user in the console using the Scanner class.
+Exercise 11
+Write a program that takes an integer greater than 1 from the user and
+checks if the number is a prime number. In the case when this number
+is a prime number, the program will write a message "Yes" in the
+console, otherwise it will write a message "No" in the console.
+If the user gives a number less than or equal to 1, the program will write
+in the console the message: "I am interrupting work"   Get the data from
+the user in the console using the Scanner class.
+Exercise 12
+Write a program that counts how many times each of the numbers has
+appeared in the prepared table and prints a summary in the console. An
+array can contain ** only ** numbers from 1 to 10.
+For example, for the table [6 5 4 5 10 5 8 3 10 6 6 6 4 3 2 8 1 3 4 7] , the
+program should write in the console the number of occurrences of each
+number:
+• 1 - 1
+• 2 - 1
+• 3 - 3
+• 4 - 3
+• 5 - 3
+• 6 - 4
+• 7 - 1
+• 8 - 2
+• 9 - 0
+• 10 - 2
+An array containing numbers is prepared as the variable numbers.
+Exercise 13
+Write a program that reads the text entered by the user, and then:
+1. checks if the word "Java" appears in the text - if so, it prints the
+message "Found Java" in the console,
+2. checks if the text starts with the word "Java" - if so, it prints the
+message "Starts with Java" in the console,
+3. check if the text ends with the word "Java" - if so, it prints the
+message "Ends with Java" in the console,
+4. checks if the text equals the word "Java" - if so, prints the
+message "Equals Java" in the console,
+5. prints the index of the first occurrence of the word "Java" in the
+text in the console.
+For example, for the text "Java", the program should write in the
+console:
+• Found Java
+• Starts with Java
+• Ends with Java
+• Equals Java
+• 0
+and for the text "A java course from scratch is the best way to learn
+Java", the program should write in the console:
+• Found Java
+• Ends with Java
+• 52
+Get the data from the user in the console using the Scanner class.
+Exercise 14
+Write a program that reads the text entered by the user, and then for
+that text converts all comma occurrences to the text "-MAKARENA"
+and displays in the console.
+For example, for the text "Lorem ipsum dolor sit amet, consectetur
+adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+magna aliqua.", The program should write in the console "Lorem ipsum
+dolor sit amet-MAKARENA consectetur adipiscing elit-MAKARENA sed
+to eiusmod tempor incididunt ut labore et dolore magna aliqua.".
+Get the data from the user in the console using the Scanner class.
+Exercise 15
+Write a program that reads the text entered by the user and then divides
+it into individual words. Then counts the number of occurrences of
+words regardless of case and writes them to the console in alphabetical
+order.
+For example, for the text "Ala likes cats, but she is not liked by the
+Cats.", the program should write in the console:
+• ala - 1
+• but - 1
+• by - 1
+• cats - 2
+• is - 1
+• liked - 1
+• likes - 1
+• not - 1
+• she - 1
+• the - 1
+Assume that any punctuation marks may appear in the text.
+Get the data from the user in the console using the Scanner class.
+Exercise 16
+Write a program that receives text from the user and then creates a
+string that is the inverted text and displays it in the console.
+For example, for the text "Cat", the program should write the
+text "taC" in the console.
+Get the data from the user in the console using the Scanner class.
+Exercise 17
+Write a program that checks if the brackets are correctly matched in the
+user-specified arithmetic expression. The expression is given as a
+single string.
+If the brackets are correctly paired, the program should write to the
+console the message: "OK". Otherwise, the program should write to the
+console the message: "Incorrect pairing of brackets".
+• Example a: "2 * (3.4 - (-7) / 2) * (a-2) / (b-1)))", result: "Incorrect
+pairing of brackets"
+• Example b: "(2 * (3.4 - (-7) / 2) * (a-2) / (b-1))" result: "OK"
+• Example c: ") 2 * 4 (" result: "Incorrect pairing of brackets"
+Get the data from the user in the console using the Scanner class.
+Exercise 18
+Write a program that checks if the brackets are correctly matched in the
+user-specified arithmetic expression. The expression is given as a
+single string.
+If the brackets are correctly paired, the program should write to the
+console the message: "OK". Otherwise, the program should write to the
+console the message: "Incorrect pairing of brackets".
+• Example a: "2 * (3.4 - (-7) / 2) * (a-2) / (b-1)))", result: "Incorrect
+pairing of brackets"
+• Example b: "(2 * (3.4 - (-7) / 2) * (a-2) / (b-1))" result: "OK"
+• Example c: ") 2 * 4 (" result: "Incorrect pairing of brackets"
+Get the data from the user in the console using the Scanner class.
+Exercise 19
+Write a method that accepts the date format and date as String
+parameters and returns a LocalDate class object.
+Exercise 20
+Write a method that takes 2 dates as String parameters in the
+formats yyyy::MM::dd and MM-yyyy-dd.
+The method then calculates the difference between the first and second
+dates.
+The method returns an array of numbers (int), where the index of years
+is below the index of 0, the difference of months is below the index of 1,
+and the difference of days is below the index of 2.
+For example, for the dates "2014::01::23" and "03-2020-30" returns the
+array [6, 2, 7].

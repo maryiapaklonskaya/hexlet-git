@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class class4 {
     public static void main(String[] args) {
         //getLargest(1, 3, 2, 4);
@@ -7,7 +9,23 @@ public class class4 {
         //sumOf(5);
         //factorialOf(-5);
         //sumOfReccursion(3);
-        getIndex("Maryia");
+        //getIndex4("Hillary1");
+
+        //int[] nums = {3, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3};
+        //sumOfElementsInIntArray(nums);
+        //average(nums);
+
+//        int[][] nums = new int[3][3];
+//        nums[0] = new int[]{3, 4, 53, 63};
+//        nums[1] = new int[]{73, 184, 93, 123};
+//        nums[2] = new int[]{133, 144, 153, 163};
+
+        //getLargest(nums);
+
+        int[] nums1 = new int[]{1, 2, 3};
+        int[] nums2 = new int[]{1, 2, 3};
+        assignment1_ArraysMerge(nums1, nums2);
+
 
     }
 
@@ -220,12 +238,147 @@ public class class4 {
     public static void getIndex(String textInput) {
         String[] names = {"Maryia", "Alex", "Sam", "Barack", "Hillary"};
 
-        for (int i = 0; i <= names.length; i++) {
+        for (int i = 0; i < names.length; i++) {
             if (names[i] == textInput) {
                 System.out.println("index is " + i);
+                return;
             }
+            System.out.println("name does not exist");
         }
     }
+
+    public static void getIndex2(String name) {
+        String[] names = new String[]{};
+
+        for(String listName: names) {
+            System.out.println("found");
+            return;
+        }
+        System.out.println("not found");
+    }
+
+    public static void getIndex3(String name) {
+        String[] names = new String[]{};
+        int index = 0;
+
+        while (index < names.length) {
+            if(names[index].equals(name)){
+                System.out.println("found");
+                return;
+            }
+            index++;
+        }
+        System.out.println("not found");
+    }
+
+    public static void getIndex4(String name) {
+        String[] names = new String[]{"Maryia", "Alex", "Sam", "Barack", "Hillary"};
+        int index = 0;
+
+        do {
+            if(names[index].equals(name)){
+                System.out.println("found index " + index);
+                return;
+            }
+            index++;
+        } while (index < names.length);
+
+        System.out.println("not found index");
+    }
+
+    public static void multiArray(String[] args){
+        String[] names = {"a", "b", "c"}; //we know that this is array because of []
+        //String[] //array time with the strings inside
+        //String[][]
+        String[][] multiNames = new String[2][3]; //define the length, the size
+        // [2] - large array; [3] - child arrays
+
+        multiNames[0] = new String[]{"a", "b", "c"};
+        multiNames[1] = new String[]{"d", "e", "f"};
+
+        //indexes of the multidimensional array
+        //[0][0]   [0][1]   [0][2]   [1][0]   [1][1]   [1][2]
+        // || equals to ||
+        //[0][0]   [0][1]   [0][2]
+        //[1][0]   [1][1]   [1][2]
+        String name = "e";
+//        for(int i = 0; i < multiNames.length; i++) {
+//           // for(int j = 0; multiNames[i].length; j++)
+//                if(multiNames[i][j].equals(name)) {
+//                    System.out.println(multiNames[i][j]);
+//                    return;
+////                }
+//            }
+//        System.out.println("not found");
+        }
+
+    public static void sumOfElementsInIntArray(int[] nums){
+        //int[] nums = {1, 2, 3, 4};
+        int sum = 0;
+
+        for(int i : nums){ //= (int i = 0; i < nums.length; i++)
+            sum+= i; //= sum = sum + nums[i];
+            System.out.println(i + " aaand the sum is " + sum);
+        }
+        System.out.println("\n" + "The sum is " + sum);
+    }
+
+    public static void average(int[] nums){
+        float averageNum = 0;
+        int sum = 0;
+
+        for(int i : nums){
+            sum+=i;
+        }
+        averageNum = (float) sum / nums.length;
+        System.out.println("\n" + "The average is " + averageNum);
+
+    }
+
+    public static void getLargest(int[][] nums) {
+        int largest = 0;
+        for (int[] i : nums) {
+            for (int j : i) {
+                if (j > largest) {
+                    largest = j;
+                }
+            }
+        }
+        System.out.println("the largest num is " + largest);
+    }
+
+    public static void getLargest1(int[][] nums){
+        int largest = 0;
+        for(int i = 0; i < nums.length; i++){
+            for(int j = 0; j < nums[i].length; j++){
+                if(nums[i][j] > largest){
+                    largest = nums[i][j];
+                }
+            }
+        }
+        System.out.println("the largest num is " + largest);
+
+    }
+
+    public static void assignment1_ArraysMerge(int[] nums1, int[] nums2){
+        // WRITE A METHOD THAT ADDS 2 ARRAYS TOGETHER
+        // {1, 2, 3} {4, 5, 6} ====> {5, 7, 9}
+        int[] numsSum = new int[nums1.length];
+        for(int i = 0; i < nums1.length; i++){
+            numsSum[i] = nums1[i] + nums2[i];
+        }
+        System.out.println("the sum of the \n" + Arrays.toString(nums1) + "\n and \n" + Arrays.toString(nums2) + "\n equals to \n" + Arrays.toString(numsSum));
+    }
+
+    public static void assignment2_RemoveDuplicates(){
+        // WRITE A METHOD THAT FINDS DUPLICATES IN AN ARRAY
+        // {"sam", "julija", "sam", "elina", "joan", "elina"} =====> {"sam", "julija", "elina", "joan"}
+
+    }
+
+
+
+
 
 
 

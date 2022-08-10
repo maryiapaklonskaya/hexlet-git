@@ -6,7 +6,8 @@ public class class4 {
         //numberOfEven(-3);
         //sumOf(5);
         //factorialOf(-5);
-        sumOfReccursion(3);
+        //sumOfReccursion(3);
+        getIndex("Maryia");
 
     }
 
@@ -212,6 +213,19 @@ public class class4 {
         return num + sumOfReccursion(num - 1);
         }
 
+    //Write a method that contains an array of names and
+    //accepts a name as input and gives the array index as output
+    // getIndex("sam") ===> index is 0  || name does not exist
+
+    public static void getIndex(String textInput) {
+        String[] names = {"Maryia", "Alex", "Sam", "Barack", "Hillary"};
+
+        for (int i = 0; i <= names.length; i++) {
+            if (names[i] == textInput) {
+                System.out.println("index is " + i);
+            }
+        }
+    }
 
 
 

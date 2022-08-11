@@ -22,9 +22,13 @@ public class class4 {
 
         //getLargest(nums);
 
-        int[] nums1 = new int[]{1, 2, 3};
-        int[] nums2 = new int[]{1, 2, 3};
-        assignment1_ArraysMerge(nums1, nums2);
+//        int[] nums1 = new int[]{1, 2, 3};
+//        int[] nums2 = new int[]{1, 2, 3};
+//        arraysMerge(nums1, nums2);
+
+        String[] namesWithDuplicatesArray = new String[]{"sam", "julija", "sam", "elina", "joan", "elina"};
+        removeDuplicates(namesWithDuplicatesArray);
+
 
 
     }
@@ -360,7 +364,7 @@ public class class4 {
 
     }
 
-    public static void assignment1_ArraysMerge(int[] nums1, int[] nums2){
+    public static void arraysMerge(int[] nums1, int[] nums2){
         // WRITE A METHOD THAT ADDS 2 ARRAYS TOGETHER
         // {1, 2, 3} {4, 5, 6} ====> {5, 7, 9}
         int[] numsSum = new int[nums1.length];
@@ -370,19 +374,46 @@ public class class4 {
         System.out.println("the sum of the \n" + Arrays.toString(nums1) + "\n and \n" + Arrays.toString(nums2) + "\n equals to \n" + Arrays.toString(numsSum));
     }
 
-    public static void assignment2_RemoveDuplicates(){
+    public static void removeDuplicates(String[] namesWithDuplicatesArray){
         // WRITE A METHOD THAT FINDS DUPLICATES IN AN ARRAY
         // {"sam", "julija", "sam", "elina", "joan", "elina"} =====> {"sam", "julija", "elina", "joan"}
+        String[] copiesArray = new String[namesWithDuplicatesArray.length];
+        String[] resultsArray = new String[namesWithDuplicatesArray.length];
 
+        int k = 0;
+        int p = 0;
+        int m = 0;
+
+        for(int i = 0; i < namesWithDuplicatesArray.length; i++){
+            for(int j = i + 1; j < namesWithDuplicatesArray.length; j++) {
+                if((namesWithDuplicatesArray[i].equals(namesWithDuplicatesArray[j])) && (i != j)){
+                    copiesArray[k] = namesWithDuplicatesArray[j];
+                    k++;
+                }
+            }
+        }
+
+        for(int i = 0; i < namesWithDuplicatesArray.length; i++){
+            m = 0;
+            for(int j = 0; j < copiesArray.length; j++) {
+                if ((namesWithDuplicatesArray[i].equals(copiesArray[j])) ) {
+                    m++;
+                }
+            }
+
+            if(m == 0){
+                resultsArray[p] = namesWithDuplicatesArray[i];
+                p++;
+            }
+        }
+
+        System.out.println("the original array: " + Arrays.toString(namesWithDuplicatesArray));
+        System.out.println("copies names are: " + Arrays.toString(copiesArray));
+        System.out.println("unique names are: " + Arrays.toString(resultsArray));
     }
 
 
 
 
 
-
-
-
 }
-
-

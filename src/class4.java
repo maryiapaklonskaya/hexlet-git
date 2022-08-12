@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class class4 {
     public static void main(String[] args) {
@@ -26,10 +27,11 @@ public class class4 {
 //        int[] nums2 = new int[]{1, 2, 3};
 //        arraysMerge(nums1, nums2);
 
-        String[] namesWithDuplicatesArray = new String[]{"sam", "julija", "sam", "elina", "joan", "elina"};
-        removeDuplicates(namesWithDuplicatesArray);
+        //String[] namesWithDuplicatesArray = new String[]{"sam", "julija", "sam", "elina", "joan", "elina"};
+        //removeDuplicates(namesWithDuplicatesArray);
 
-
+        String text = "     hello this \t class \n fd";
+        countCharacters(text);
 
     }
 
@@ -412,6 +414,136 @@ public class class4 {
         System.out.println("unique names are: " + Arrays.toString(resultsArray));
     }
 
+    public static void removeDuplicates4(String[] list){
+        String[] found = new String[list.length];
+        int currentFoundIndex = 0;
+
+        for(int i = 0; i < list.length; i++) {
+            String element = list[i];
+            boolean elementFound = false;
+
+            for (int j = 0; j < found.length; j++) {
+                if((found[j] != null) && (found[j].equals(element))) {
+                    elementFound = true;
+                }
+            }
+            if (!elementFound) {
+                found[currentFoundIndex] = element;
+                currentFoundIndex++;
+
+            }
+        }
+        System.out.println(Arrays.toString(found));
+    }
+
+    public static void classString(String line){
+//        String myText = "Text";
+//        String myText2 = new String("text");
+//
+//        //joining text
+//        String text1 = "This is ";
+//        text1 += "my text";
+//        String text2 = "fsdf fdsfs";
+//        String newString = text1.concat(text2);
+//
+//        String myText = "Text";
+//        String myText2 = new String;
+//        String val1 = text1.intern();
+//        String val2 = text2.intern();
+//
+//        System.out.println(val1.equals(val2));
+        // (text1 == text2) checks if values are stored in the exact same location
+        // stringText.length() - should be with () since it is a method
+        // textString.toUpperCase()
+        // textString.toLowerCase()
+        // indexOf() --> returns position of the first char of the occurence of the specified text in a string
+        // textString.indexOf("masha"); returns -1 if couldn't find the matching piece
+        // replaceAll() - replace all occurences of a given text with another
+        // textString.replaceAll("a", "o")  "hahaha" --> "hohoho"
+        // substring(int) - gets part of the string,  returns starting from int - starting index
+        // substring(int1, int2) - starts from index int1, ends with index int2EXCLUDED
+        // textString.contains("text")
+        // textString.trim() removes white space char before and after
+        // textString.isEmpty() - finds ANY character even whitespaces
+        // textString.isBlank() - checks if there are any visible characters
+
+    }
+
+    public static void scannerMethod() {
+        Scanner scan = new Scanner(System.in);
+
+        String input1 = scan.nextLine(); //gives String
+        int input2 = scan.nextInt(); //gives int
+        boolean input3 = scan.nextBoolean();
+        double input4 = scan.nextDouble();
+
+        //PRINTF()
+        System.out.printf("100.0 / 3.0 = %5.2f", 100.0 / 3.0);
+//                * e - floating point number in exponential notation
+//                * f - floating-point number
+//                * x - integer in hexadecimal system
+//                * o - integer in the octal number system
+//                * s - string
+//                * c - one character (char)
+//                * b - logical value
+
+        String intStrValue = "1";
+        String floatStrValue = "2.0";
+        String doubleStrValue = "2.3434343434";
+        String booleanStrValue = "true";
+        String longStrValue = "100000000000000";
+
+        //WRAPPER CLASSES
+        int intValue = Integer.parseInt(intStrValue);
+        int intValue2 = Integer.valueOf(intStrValue);
+        double doubleValue = Double.parseDouble(doubleStrValue);
+        float floatValue = Float.parseFloat(floatStrValue);
+        boolean booleanValue = Boolean.parseBoolean(booleanStrValue);
+        long longValue = Long.parseLong(longStrValue);
+
+    }
+
+    public static void countCharacters(String line) {
+    // WRITE A METHOD TO COUNT HOW MANY NON-WHITESPACE CHARACTERS ARE IN A STRING
+    // "     this class is /n about /t java  " ====>   "this class is about java" ====> 24
+
+        line = line.replace("\n"," ");
+        line = line.replace("\t"," ");
+        line = line.trim();
+        int length = line.length();
+        int length2 = line.length();
+        String lineTemp = "";
+
+        for(int i = 0; i < length2 - 1; i++) {
+            lineTemp = line.substring(i, i + 1);
+            if (lineTemp.equals(" ")) {
+                length--;
+            }
+        }
+
+        System.out.println(length);
+
+    }
+
+    public static void countCharacters2(String line) {
+        // WRITE A METHOD TO COUNT HOW MANY NON-WHITESPACE CHARACTERS ARE IN A STRING
+        // "     this class is /n about /t java  " ====>   "this class is about java" ====> 24
+
+        line = line.trim();
+        int length = line.length();
+        int length2 = line.length();
+        String lineTemp = "";
+
+        for(int i = 0; i < length2 - 1; i++) {
+            lineTemp = line.substring(i, i + 1);
+            if ((lineTemp.equals(" ")) || (lineTemp.equals("\n")) || (lineTemp.equals("\t")) ){
+                length--;
+            }
+        }
+
+        System.out.println(length);
+
+    }
 
 
 

@@ -30,9 +30,11 @@ public class class4 {
         //String[] namesWithDuplicatesArray = new String[]{"sam", "julija", "sam", "elina", "joan", "elina"};
         //removeDuplicates(namesWithDuplicatesArray);
 
-        String text = "     hello this \t class \n fd";
-        countCharacters(text);
+        String text = "Карл у Клары украл кораллы, а Клара у Карла украла кларнет";
+//        countCharacters(text);
+//        getSubstring(args);
 
+        theLongestWord(text);
     }
 
     public static void getLargest(int num1, int num2, int num3, int num4) {
@@ -544,6 +546,36 @@ public class class4 {
         System.out.println(length);
 
     }
+
+
+    public static void getSubstring(String inputText) {
+//    Write a Java program to get a substring of a given string between two specified positions
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Input position from which to trim the text line (integer):");
+        int num1 = scan.nextInt();
+        System.out.println("Input position until which to trim the text line (integer):");
+        int num2 = scan.nextInt();
+        System.out.println(inputText.substring(num1, num2));
+    }
+
+    public static void theLongestWord(String inputText) {         //    Write a method to get the length of the longest word in a string sentence
+        int longest = 0;
+        int wordLength = 0;
+        String inputText1 = inputText.concat(" ");
+
+        for(int i = 0; wordLength < inputText1.length(); i++) {
+            wordLength = inputText1.indexOf(" ");
+            inputText1 = inputText1.substring(wordLength + 1);
+            if (wordLength > longest) {
+                longest = wordLength;
+            }
+        }
+
+        System.out.println("The longest word's length is: " + longest);
+
+    }
+
 
 
 

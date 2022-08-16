@@ -2,7 +2,9 @@ public class HexletTasks {
 
     public static void main(String[] args){
         //addDigits(1234567890);
-        fib(1);
+        //fib(1);
+        //fizzBuzz(10, 20);
+        diff(160, 0);
     }
 
     public static int addDigits(int num) {
@@ -58,6 +60,42 @@ public class HexletTasks {
             System.out.println(fibNum3);
             return fibNum3;
         }
+    }
+
+    public static void fizzBuzz(int begin, int end) {
+        for (int i = begin; i <= end; i++) {
+            if ((i % 3 == 0) && (i % 5 == 0)) {
+                System.out.println("FizzBuzz");
+            } else if (i % 3 == 0) {
+                System.out.println("Fizz");
+            } else if (i % 5 == 0) {
+                System.out.println("Buzz");
+            } else {
+                System.out.println(i);
+            }
+
+        }
+    }
+
+    public static void diff(int a, int b) {
+        int num1 = 0;
+
+        if (a > b) {
+            num1 = a;
+            a = b;
+            b = num1;
+        }
+
+        num1 = b - a;
+
+        if (num1 > 180)
+            {
+                num1 = 360 - num1;
+            }
+
+        System.out.println(num1);
+
+
     }
 
 }

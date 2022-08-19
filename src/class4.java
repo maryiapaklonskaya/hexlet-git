@@ -1,5 +1,9 @@
+import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class class4 {
     public static void main(String[] args) {
@@ -30,11 +34,20 @@ public class class4 {
         //String[] namesWithDuplicatesArray = new String[]{"sam", "julija", "sam", "elina", "joan", "elina"};
         //removeDuplicates(namesWithDuplicatesArray);
 
-        String text = "Карл у Клары украл кораллы, а Клара у Карла украла кларнет";
+        //String text = "Карл у Клары украл коралл а Клара у Карла украла кларнет";
 //        countCharacters(text);
 //        getSubstring(args);
 
-        theLongestWord(text);
+        //theLongestWord(text);
+//        String text = "minute";
+//        addToTime(text, 15);
+//
+//        LocalDate date = LocalDate.of(2018, Month.DECEMBER, 12);
+//        getNumberOfDays(date);
+
+        int[] numsArray = {4, 5 , 1, 8, 2, 5, 7, 234, -2};
+        bubbleSortOptimized(numsArray);
+
     }
 
     public static void getLargest(int num1, int num2, int num3, int num4) {
@@ -564,7 +577,7 @@ public class class4 {
         int wordLength = 0;
         String inputText1 = inputText.concat(" ");
 
-        for(int i = 0; wordLength < inputText1.length(); i++) {
+        while(wordLength < inputText1.length()) {
             wordLength = inputText1.indexOf(" ");
             inputText1 = inputText1.substring(wordLength + 1);
             if (wordLength > longest) {
@@ -576,8 +589,153 @@ public class class4 {
 
     }
 
+    public static  void regularExpressions() {
+        //abcde
+        //quantifier - number of repetitions --> a+bcde == 1 or more 'a' and bcde
+        // * - zero or more occurences --> a*b = ab, b, aab, aaab and similar
+        // + - one or more occurences --> a+b = ab, aab, aaaaab, and similar
+        // ? - zero or one occurence --> a?b = ab, b
+        // (n,m) - at least N and maximum M of occurence --> a(1,4)b = ab, aab, aaab, aaaab only
+        // (n,) - atleast N occurences --> a(3,)b = aaab, aaaaab, aaaaaaab, and similar
+        // (,n) - maximum N occurences --> a(,3)b = b, ab, aab, aaab only
+        // (n) - exactly N occurences --> a(3)b = aaab
+        // [all possible characters] OR in groups (ranges)
+        // RANGE e.g. 1-3; 0-9; 1-5; a-z; A-Z)
+        //
+        // [abcde] --> one of the letters
+        // [a-zA-Z] one of the lettters a to z lowercase and uppercase
+        // [a-c3-5] letter a to c OR number 3 to 5
+        // [abc\[\]] letter a or b or c or square parenthesis
+        // [.] any letter
+        // PATTERN () AND MATCHER ()
+
+//        Pattern pattern = Pattern.compile("a+bcd");
+//        Matcher matcher = pattern.matcher("aaaabcd aaaaaabbcd");
+//        matcher.matches(); //returns true/false should MATCH the whole expression
+//        matcher.find(); //should partially match (include part of the expression)
+//
+//        Scanner scan = new Scanner(System.in);
+//
+//        String emailInput = scan.nextLine(); //gives String
+//        Pattern emailPattern = Pattern.compile("[A-Z]+[^A-Za-z0-9]");
+//        Matcher emailMatcher = pattern.matcher(emailInput);
+
+    }
+
+    public static  void timeDate() {
+//        LocalTime localTime = LocalTime.now(); //HH:mm:ss.mmm
+//        LocalTime localTime = LocalTime.now().withSecond(0); // seconds to zero
+//        LocalTime localTime = LocalTime.now().withNano(0); // with nanoseconds
+//        LocalTime localTime = LocalTime.now().withHour(0).minusHours(2);
+        // now.getHour().getSecond etc
 
 
+        //System.out.println("Now id the time " + localTime);
+
+    }
+
+//    public static void addToTime(String type, int addition) {
+//
+//        LocalTime now = null;
+//        switch (type) {
+//            now = LocalTime.now();
+//
+//            case "hour":
+//                now = now.plusHours(addition);
+//                //System.out.println(now);
+//                break;
+//
+//            case "minute":
+//                now = now.plusMinutes(addition);
+//                //System.out.println(now1);
+//                break;
+//
+//            case "second":
+//                now = now.plusSeconds(addition);
+//                //System.out.println(now2);
+//                break;
+//
+//            case "millisecond":
+//                now = now.plusNanos(addition);
+//                //System.out.println(now3);
+//                break;
+//        }
+//
+//        System.out.println(now);
+//
+//    }
+
+  //  public static void time(){
+//        LocalDate localDate = LocalDate.now();
+//        System.out.println(localDate);
+//
+//        LocalDate someBirthday = LocalDate.of(2021, Month.AUGUST, 10);
+//        System.out.println(someBirthday);
+//
+//        LocalDateTime localDateTime = LocalDateTime.now().of(2021, 08, 23);
+//
+//        Instant instant = Instant.now();
+//        LocalDateTime localDateTimeTimezone = LocalDateTime.ofInstant(instant, ZoneId.of("UTC+3"));//we want to change the instant
+
+        //DURATION.between(datetime, datetime);
+        //PERIOD.between
+        // localtime.format(DateTimeFormatter..ofPattern("dd:MM:YY);
+
+
+
+
+
+  //  }
+
+
+    /* WRITE A METHOD THAT CALCULATES HOW MANY SECONDS HAVE PASSED
+       OR WILL PASS BETWEEN TODAY AND A SPECIFIC PROVIDED DATE
+       ===> OUTPUT SHOULD SPECIFY past or future date*/
+    public static void getNumberOfDays(LocalDate localInputDate){
+        //LocalDate inputDate = LocalDate
+
+        if(localInputDate.isAfter(LocalDate.now())) {
+            System.out.println("This is " + Period.between(LocalDate.now(), localInputDate).getDays() + " away in the future");
+        } else {
+            System.out.println("This is " + Period.between(LocalDate.now(), localInputDate).getDays() + " in the past");
+        }
+
+    }
+
+    //SORTING ALGORITHMS
+
+    // BUBBLE SORT
+    public static void bubbleSort(int[] nums) {
+        for(int i = 0; i < nums.length; i++) {
+            for(int j = 0; j < nums.length - 1; j++) {
+                if(nums[j] < nums[j + 1]) {
+                    int temp = nums[j];
+                    nums[j] = nums[j + 1];
+                    nums[j + 1] = temp;
+                }
+            }
+        }
+
+        System.out.println(Arrays.toString(nums));
+    }
+
+    public static void bubbleSortOptimized(int[] nums) {
+        boolean swapped = true;
+
+        do{
+            swapped = false;
+            for(int j = 0; j < nums.length - 1; j++) {
+                if(nums[j] < nums[j + 1]) {
+                    int temp = nums[j];
+                    nums[j] = nums[j + 1];
+                    nums[j + 1] = temp;
+                    swapped = true;
+                }
+            }
+        } while(swapped);
+
+        System.out.println(Arrays.toString(nums));
+    }
 
 
 }
